@@ -15,10 +15,6 @@ paper publishes.
 The library needs **numpy alone**. matplotlib is used only by the scripts under
 `demo/`.
 
-Written for a B.Sc. thesis at TU München, Engineering Risk Analysis Group. The
-thesis itself, and the later work coupling this estimator to a State Space
-Kriging surrogate, are not part of this repository.
-
 ## The method
 
 Given a scalar series `x`, a delay reconstruction uses the vectors

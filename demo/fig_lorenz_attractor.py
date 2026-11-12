@@ -1,8 +1,7 @@
-"""The Lorenz attractor as a plain line drawing, to illustrate the text.
+"""The Lorenz attractor as a plain line drawing.
 
 An illustration, not a measurement: no axes, no labels, no annotation, nothing
-to read off. The shape alone has to carry it. Matched to the reference image
-figures/lorenz_attraktor.png.
+to read off. The shape alone has to carry it.
 
 Parameters are Lorenz's own canonical set, sigma = 10, rho = 28, beta = 8/3 --
 the ones every treatment of the system uses, Casdagli's included. They are not

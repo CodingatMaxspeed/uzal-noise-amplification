@@ -91,8 +91,8 @@ def main():
     ax_b.grid(alpha=0.25)
     ax_b.set_xlim(0, T_W_MAX)
 
-    # No figure-level title: the panels carry (a) and (b), and what the
-    # suptitle used to say belongs in the thesis caption, not in the image.
+    # No figure-level title: the panels carry (a) and (b), and the rest
+    # belongs in the caption of whatever the figure is used in.
     fig.tight_layout()
     out = FIGURES / "fig2_lorenz_sweep.png"
     fig.savefig(out, dpi=160)
