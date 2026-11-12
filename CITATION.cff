@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, please cite both the original paper and this
+  implementation.
+title: "uzal: the noise amplification cost function of Uzal, Grinblat and Verdes"
+abstract: >-
+  A tested Python implementation of the state space reconstruction cost
+  function L_k of Uzal, Grinblat and Verdes (2011), together with the scripts
+  that reproduce the optima and figures published in that paper.
+type: software
+authors:
+  - family-names: Seeger
+    given-names: Maximilian
+repository-code: "https://github.com/CodingatMaxspeed/uzal-noise-amplification"
+license: MIT
+version: 1.0.0
+date-released: "2026-11-12"
+keywords:
+  - nonlinear time series analysis
+  - state space reconstruction
+  - delay embedding
+  - noise amplification
+references:
+  - type: article
+    title: >-
+      Optimal reconstruction of dynamical systems: A noise amplification
+      approach
+    authors:
+      - family-names: Uzal
+        given-names: Lucas C.
+      - family-names: Grinblat
+        given-names: Guillermo L.
+      - family-names: Verdes
+        given-names: Pablo F.
+    journal: Physical Review E
+    volume: 84
+    issue: 1
+    start: "016223"
+    year: 2011
+    doi: 10.1103/PhysRevE.84.016223
