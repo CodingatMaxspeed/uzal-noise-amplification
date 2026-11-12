@@ -80,6 +80,34 @@ python demo/fig3_paper_fig7.py      # reproduces Fig. 7(a)-(c)
 
 Figures are written to `figures/`, which is not tracked.
 
+## Using it
+
+Two inputs: a scalar series and the horizon `T_M` of Eq. (15), the latter read
+off the series rather than guessed. Everything is in sampling steps, not in
+time units.
+
+```python
+from uzal.sweep import separation_horizon, cost_sweep, sweep_minimum
+
+T_M, _, _ = separation_horizon(x, max_T=300)   # 74 for the Lorenz series
+sweep = cost_sweep(x, dims=[2, 3, 4, 5], t_w_max=40, T_M=T_M, N=None)
+m, t_w, tau, L = sweep_minimum(sweep)          # (3, 12, 6, -0.9614)
+```
+
+`cost_at(x, m, tau, T_M)` scores a single reconstruction, and
+`cost_of_cloud(x, X, times, T_M)` an arbitrary point cloud: `eps_k` reads the
+cloud while `E_k` reads the raw series through the time stamps, so a
+non-uniform lag set (`uzal.embedding.lag_embedding`), PCA or Legendre
+coordinates are all scored by the same call. Both return
+`Cost(L, R, I, sigma_bar, alpha)` with `L = R + I`, and the minimum over the
+grid is the answer.
+
+Two things that bite. The Theiler window is not optional -- without it the
+nearest neighbours of a delay vector are its own predecessors, `eps_k -> 0`
+and the estimator collapses; the default is `w = t_w`. And `N=None` uses every
+valid reference point instead of sampling 1000 of them: slower, but the curves
+then carry no sampling noise and no seed.
+
 ## Deviations
 
 Every point at which this implementation departs from, or fills a gap in, the
